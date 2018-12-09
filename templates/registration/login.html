@@ -1,0 +1,28 @@
+{% extends 'layouts/application.jinja2' %}
+
+{% from 'macros/forms.jinja2' import control_group %}
+
+{% block content %}
+    <form class="pure-form pure-form-stacked pure-display-block pure-center-block pure-u-1-2"
+          method="post" action="{{ url_for('auth_login') }}">
+        <div class="l-box welcome txt-standart">
+            <h1 class="text-box-head">welcome</h1>
+        </div>
+
+        <div class="pure-control-group">{{ form.non_field_errors() }}</div>
+
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <input type="hidden" name="next" value="{{ url_for('home') }}"/>
+
+        {{ control_group(form.username, placeholder='Username') }}
+        {{ control_group(form.password, placeholder='Password') }}
+
+        <div class="pure-control-group">
+            <button class="myButton"
+                    type="submit">Log in
+            </button>
+            <a class="pure-button myButton"
+               href="{{ url_for('registration_register') }}">Register</a>
+        </div>
+    </form>
+{% endblock %}

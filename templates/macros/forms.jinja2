@@ -1,0 +1,12 @@
+{% macro control_group(field, placeholder='') %}
+  <div class="control-group pure-control-group">
+{#    {{ field.label_tag() }}#}
+    {%- if field.help_text %}
+      <p class="pure-form-message">{{ field.help_text }}</p>
+    {% endif %}
+    {{ field|attrs(class='pure-u-1', placeholder=placeholder) }}
+    {%- if field.errors %}
+      <div class="pure-form-message-error">{{ field.errors }}</div>
+    {% endif %}
+  </div>
+{% endmacro %}

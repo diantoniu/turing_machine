@@ -1,0 +1,39 @@
+/* Centers text of container */
+.pure-center {
+  text-align: center !important;
+}
+
+.pure-text-right {
+  text-align: right;
+}
+
+/* Centers block using margin */
+.pure-center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pure-display-block {
+  display: block !important;
+}
+
+
+/* Container */
+
+.pure-container {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+
+/* Boxes */
+
+.photo-box {
+  padding: 1rem;
+}
+
+.photo-box img {
+  width: 100%;
+}

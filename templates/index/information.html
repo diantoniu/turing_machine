@@ -1,0 +1,43 @@
+{% extends "layouts/application.jinja2" %}
+{% block content %}
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/04/3b/3c/043b3c0ff26d6fbc8a3002bcea62800e.jpg" width="400"
+         height="255" alt="lorem">
+    <div class="information">
+        <h1>What is Turing Machine ?</h1>
+        <p>
+            A Turing machine is a computing device, just like your computer. You
+            can think of it as a mechanism in which you write a word as input, and
+            it processes it and outputs some result. To understand this model, imagine
+            an infinite tape divided in cells. Each cell either contains a symbol
+            or is blank, and there is a read-write head pointing to exactly one cell
+            at a time.
+            Besides the tape and the read-right head, a Turing Machine has a set
+            of possible states. For the sake of simplicity, imagine that each state
+            represents a task. Thus, the state of the machine represents the task
+            the machine is working on.
+            When a Turing Machine is running, it is in exactly one state at a time.
+            Every Turing Machine has an initial state. This state is adopted by the
+            machine when it starts processing a word. At this time, the read-write
+            head is pointing at the first symbol of the word.
+            The word processing is determined by the machine instructions, which
+            are called transitions. Every transition has an executing condition and
+            an Instruction.
+            The executing condition depends only on the state and on what is being
+            read. When the condition of a transition is satisfied, the instruction
+            of the transition is executed.
+        </p>
+        <h1>What is Normal Markov algorithms ?</h1>
+        <p>
+            Normal Markov algorithms (hereinafter referred to as NAM), introduced by
+            the Soviet mathematician AA Markov, are a class of algorithms applicable to the
+            words of some alphabet. Each NAM is defined by specifying the alphabet in which
+            it operates, and the NAM scheme. The alphabet AAM can be any finite alphabet A.
+            The substitution formula in the alphabet A is an expression of the type p → q (a
+            simple substitution, denoted in the emulator as ->) or p ↦ q (the final substitution,
+            in the emulator is denoted as =>), where p and Q are certain words in the alphabet A,
+            called the left and right parts of the substitution formula, respectively. Each HAM in
+            the alphabet A has a finite number of substitution formulas. They are written in the
+            form of a list, which is called an algorithm scheme.
+        <p>
+    </div>
+{% endblock %}

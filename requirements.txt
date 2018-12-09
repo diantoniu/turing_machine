@@ -1,0 +1,12 @@
+Django==1.10.6
+django-filter==1.0.2
+django-registration==2.2
+django-select2-forms==2.0.2
+inflect==0.2.5
+Jinja2==2.9.5
+jinja2-pluralize==0.3.0
+MarkupSafe==1.0
+packaging==16.8
+pyparsing==2.2.0
+requests==2.18.4
+six==1.11.0

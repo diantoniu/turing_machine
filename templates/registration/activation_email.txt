@@ -1,0 +1,5 @@
+Dear {{ user.username }}, please activate your account on {{ site.name }} using following link:
+
+http://{{ site.domain }}{{ url_for('registration_activate', activation_key) }}
+
+Link is valid for {{ expiration_days }} days.
