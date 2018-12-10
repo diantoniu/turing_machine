@@ -1,18 +1,26 @@
+# Welcome to Algorithm Simulator project.
 
-The project contains two algorithms:
-* ___Turing machine algorithm___;
-* ___Markov algorithm___.
+Currently the project contains two following algorithms:
+* __Turing machine algorithm;__
+* __Markov algorithm.__
 
-#Turing machine (TM)
+In the following sections you will see a short information 
+and examples for the algorithms.
 
-A Turing machine is a mathematical model of computation that 
-defines an abstract machine, _**which manipulates symbols on
-a strip of tape according to a table of rules**_. Despite the
+You can also access more documentation by following [link (in ukr)](https://docs.google.com/document/d/14754ouaBgO_RfGjSyRqqN4__binkFO0bNTNBlVl8IVQ/edit?usp=sharing).
+
+Active website: [https://turing-machine.sloppy.zone](https://turing-machine.sloppy.zone/).
+
+## Turing machine (TM)
+
+Turing machine is a mathematical model of computation that 
+defines an abstract machine, __which manipulates symbols on
+a strip of tape according to a table of rules__. Despite the
 model's simplicity, given any computer algorithm, a
 Turing machine capable of simulating that algorithm's
 logic can be constructed.
 
-##Example 1
+### Example
 
 Write a Turing machine that calculates the sum of two 
 numbers written in the unary number system.
@@ -26,70 +34,60 @@ the so-called unitary (or bar) system: what is the
 number - so many ones.
 
 The initial configuration of the Turing machine will be 
-_q1_(111... 1 + 1...1)‚ where the number of ones in the 
+_q1_ (111...1 + 1...1)‚ where the number of ones in the 
 first addend is ___x___, and the number of ones in the 
 second addend is ___y___. The final configuration is required 
 to be _q0_ (1...1), where the number of ones equals ___x___ + ___y___. 
-To do this, let's develop a plan for the operation of
-the TM:
 
+To do this, let's develop a plan for the operation of the TM:
 1. Erase the first unit;
-
 2. Move the head to the right until the ___+___ sign, which should be replaced by 1;
-
 3. Move the head to the left until the ___λ___ (empty character) sign;
-
 4. Shift the head one character to the right and stop.
 
 The implementation of each item of this plan requires 
-its own state, so after writing down commands that implement the item of the plan,
+its own state, so after writing down commands that implement 
+the item of the plan,
 the state of the Turing machine should be changed.
 
-```
-1.1) q1 1 → q2 λ
-2.1) q2 1 → q2 R 1
-2.2) q2 + → q3 1
-3.1) q3 1 → q3 L 1
-4.1) q3 λ → q0 R λ
-```
-
-Let's write the protocol of work of this TM‚ calculating 2 + 3.
+Here you have the code. If you put "11+111" to the input - you'll 
+get "11111" after running this code.
 
 ```
-q1 11+111 (by 1.1) ⇒
-q2 1+111 (by 2.1) ⇒
-1 q2 +111 (by 2.2 ) ⇒
-1 q3 1111 (by 3.1 ) ⇒
-q3 11111 (by 3.1 ) ⇒
-q3 λ11111 (by 4.1 ) ⇒
-q0 11111
+q0 1 → q0 1 R
+q0 + → q1 1 R
+q1 1→q1 1 R
+q1 λ →  q2 λ L
+q2 1 → q* λ
 ```
 
-##Markov algorithm
+
+## Markov algorithm
 
 In theoretical computer science, a Markov algorithm is a 
 string rewriting system that uses grammar-like rules to 
 operate on strings of symbols. Markov algorithms have been 
 shown to be Turing-complete, which means that they are 
-suitable as a general model of computation and can r
-epresent any mathematical expression from its simple notation. 
+suitable as a general model of computation and can represent 
+any mathematical expression from its simple notation. 
 
 A Markov Algorithm over an alphabet ___A___ is a finite 
-ordered sequence of productions ___x→y___, where ___x___, 
+ordered sequence of productions ___x → y___, where ___x___, 
 ___y ∈ A*___. Some productions may be “Halt” productions. e.g.
 
 ```
 abc → b
 ba → x (halt)
 ```
+
 Execution proceeds as follows:
 
-1. Let the input string be w
+1. Let the input string be ___w___;
 
 2. The productions are scanned in sequence, looking for
-a production x → y where x is a substring of w;
+a production ___x → y___ where ___x___ is a substring of ___w___;
 
-3. The left-most x in w is replaced by y;
+3. The left-most ___x___ in ___w___ is replaced by ___y___;
 
 4. If the production is a halt production, we halt;
 
@@ -97,7 +95,7 @@ a production x → y where x is a substring of w;
 
 6. If a replacement was made, we repeat from step 2.
 
-##Example 2
+### Example
 
 The algoritm:
 ````
